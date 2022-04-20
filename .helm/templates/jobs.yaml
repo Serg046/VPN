@@ -14,9 +14,9 @@ spec:
           - "udp://serg046.dev"
         volumeMounts:
         - name: ovpn-data-volume
-          mountPath: ovpn-data-volume
+          mountPath: /etc/openvpn
       volumes:
       - name: ovpn-data-volume
         persistentVolumeClaim:
-          claimName: ovpn-pvc
+          claimName: local-path-pvc
       restartPolicy: Never
