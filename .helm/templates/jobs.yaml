@@ -35,6 +35,7 @@ spec:
         - "sh"
         - "-c"
         - >
+          ls;
           ovpn_initpki;
         volumeMounts:
         - name: ovpn-data-volume
