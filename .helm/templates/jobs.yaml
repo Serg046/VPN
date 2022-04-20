@@ -17,29 +17,6 @@ spec:
           mountPath: "/etc/openvpn"
       volumes:
       - name: ovpn-data-volume
+        hostPath:
+          path: ovpn-data-volume
       restartPolicy: Never
-
----
-
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: ovpn-genconfig-set
-spec:
-  template:
-    spec:
-      containers:
-      - name: ovpn-genconfig-set
-        image: kylemanna/openvpn
-        command:
-        - "sh"
-        - "-c"
-        - >
-          ls /etc/openvpn;
-          /etc/openvpn/ovpn_initpki;
-        volumeMounts:
-        - name: ovpn-data-volume
-          mountPath: "/etc/openvpn"
-      volumes:
-      - name: ovpn-data-volume
-      restartPolicy: Never 
