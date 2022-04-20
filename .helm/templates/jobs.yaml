@@ -35,8 +35,8 @@ spec:
         - "sh"
         - "-c"
         - >
-          ls;
-          ovpn_initpki;
+          ls /etc/openvpn;
+          /etc/openvpn/ovpn_initpki;
         volumeMounts:
         - name: ovpn-data-volume
           mountPath: "/etc/openvpn"
