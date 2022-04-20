@@ -13,10 +13,10 @@ spec:
           - "-u"
           - "udp://serg046.dev"
         volumeMounts:
-        - name: ovpn-data-volume
+        - name: ovpn-data-volume-1
           mountPath: /etc/openvpn
       volumes:
-      - name: ovpn-data-volume
+      - name: ovpn-data-volume-1
         persistentVolumeClaim:
           claimName: local-path-pvc
       restartPolicy: Never
@@ -39,10 +39,10 @@ spec:
         - >
           ovpn_initpki < "test" < "test" < "serg046.dev" < "test" < "test";
         volumeMounts:
-        - name: ovpn-data-volume
+        - name: ovpn-data-volume-2
           mountPath: /etc/openvpn
       volumes:
-      - name: ovpn-data-volume
+      - name: ovpn-data-volume-2
         persistentVolumeClaim:
           claimName: local-path-pvc
       restartPolicy: Never
