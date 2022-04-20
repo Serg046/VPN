@@ -31,11 +31,6 @@ spec:
       containers:
       - name: ovpn-genconfig 
         image: kylemanna/openvpn
-        command:
-        - "sh"
-        - "-c"
-        - >
-          ovpn_initpki;
         volumeMounts:
         - name: ovpn-data-volume
           mountPath: "/etc/openvpn"
