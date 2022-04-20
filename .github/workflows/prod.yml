@@ -1,0 +1,33 @@
+name: Production Deployment
+on:
+  push:
+    branches: [master]
+jobs:
+  converge:
+    name: Converge
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - name: Install werf CLI  
+        uses: werf/actions/install@v1.2
+    
+      - name: Create kube config
+        run: |
+          KUBECONFIG=$(mktemp -d)/config
+          base64 -d <(printf "%s" $KUBE_CONFIG_BASE64_DATA) > $KUBECONFIG
+          echo KUBECONFIG=$KUBECONFIG >> $GITHUB_ENV
+        env:
+          KUBE_CONFIG_BASE64_DATA: ${{ secrets.KUBE_CONFIG_BASE64_DATA }}
+  
+      - name: Run werf commands
+        run: |
+          source $(werf ci-env github --as-file)
+          werf render --dev
+          werf converge --dev
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          WERF_ENV: production
