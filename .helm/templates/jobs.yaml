@@ -20,3 +20,29 @@ spec:
         persistentVolumeClaim:
           claimName: local-path-pvc
       restartPolicy: Never
+
+---
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ovpn-genconfig-set
+spec:
+  template:
+    spec:
+      containers:
+      - name: ovpn-genconfig-set
+        image: kylemanna/openvpn
+        command:
+        - "sh"
+        - "-c"
+        - >
+          ovpn_initpki < "test" < "test" < "serg046.dev" < "test" < "test";
+        volumeMounts:
+        - name: ovpn-data-volume
+          mountPath: /etc/openvpn
+      volumes:
+      - name: ovpn-data-volume
+        persistentVolumeClaim:
+          claimName: local-path-pvc
+      restartPolicy: Never
