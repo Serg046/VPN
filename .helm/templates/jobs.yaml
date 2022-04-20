@@ -17,6 +17,6 @@ spec:
           mountPath: ovpn-data-volume
       volumes:
       - name: ovpn-data-volume
-        hostPath:
-          path: /etc/openvpn
+        persistentVolumeClaim:
+          claimName: ovpn-pvc
       restartPolicy: Never

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ovpn-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: /etc/openvpn
+  resources:
+    requests:
+      storage: 1Gi
