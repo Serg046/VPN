@@ -7,6 +7,9 @@ spec:
     matchLabels:
       app: openvpn
   template:
+    metadata:
+      labels:
+        app: openvpn
     spec:
       containers:
       - name: openvpn
