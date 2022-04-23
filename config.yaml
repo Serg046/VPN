@@ -34,3 +34,25 @@ spec:
         persistentVolumeClaim:
           claimName: local-path-pvc
       restartPolicy: Never
+
+---
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ovpn-initpki
+spec:
+  template:
+    spec:
+      containers:
+      - name: ovpn-initpki
+        image: kylemanna/openvpn
+        command: ["sh", "-c", "EASYRSA_BATCH=1 ovpn_initpki nopass"]
+        volumeMounts:
+        - name: ovpn-data-volume
+          mountPath: /etc/openvpn
+      volumes:
+      - name: ovpn-data-volume
+        persistentVolumeClaim:
+          claimName: local-path-pvc
+      restartPolicy: Never
