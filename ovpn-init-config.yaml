@@ -8,11 +8,7 @@ spec:
       containers:
       - name: ovpn_initpki
         image: kylemanna/openvpn
-        command:
-        - "sh"
-        - "-c"
-        - >
-          ovpn_initpki 
+        command: ["ovpn_initpki"]
         volumeMounts:
         - name: ovpn-data-volume
           mountPath: /etc/openvpn
