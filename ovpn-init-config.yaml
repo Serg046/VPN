@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-      - name: ovpn_initpki
+      - name: ovpn-initpki
         image: kylemanna/openvpn
         command: ["ovpn_initpki"]
         volumeMounts:
