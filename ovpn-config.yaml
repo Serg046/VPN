@@ -24,8 +24,8 @@ spec:
         image: kylemanna/openvpn
         args:
         - "ovpn_genconfig"
-          "-u"
-          "udp://serg046.dev"
+        - "-u"
+        - "udp://serg046.dev"
         volumeMounts:
         - name: ovpn-data-volume
           mountPath: /etc/openvpn
