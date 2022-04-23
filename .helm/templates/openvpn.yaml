@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: openvpn
 spec:
+  selector:
+    matchLabels:
+      app: openvpn
   template:
     spec:
       containers:
