@@ -6,7 +6,7 @@ spec:
   type: NodePort
   ports:
   - port: 1194
-    protocol: udp
+    protocol: UDP
     targetPort: 1194
   selector:
     app: openvpn
