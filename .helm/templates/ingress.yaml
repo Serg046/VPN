@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: openvpn-ingress
 spec:
-  backend:
-    serviceName: openvpn-service
-    servicePort: 1194
+  ports:
+  - name: vpn
+    port: 1194
+    targetPort: 1194
