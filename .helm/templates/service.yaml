@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: openvpn-service
 spec:
+  type: LoadBalancer
   ports:
   - port: 1194
     protocol: UDP
