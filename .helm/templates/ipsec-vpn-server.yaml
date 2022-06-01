@@ -20,3 +20,4 @@ spec:
           privileged: true
           capabilities:
             add: ["NET_ADMIN"]
+      imagePullPolicy: Always
