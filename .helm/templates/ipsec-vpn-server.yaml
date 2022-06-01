@@ -14,10 +14,10 @@ spec:
       containers:
       - name: ipsec-vpn-server
         image: hwdsl2/ipsec-vpn-server
+        imagePullPolicy: Always
         ports:
         - containerPort: 789
         securityContext:
           privileged: true
           capabilities:
             add: ["NET_ADMIN"]
-      imagePullPolicy: Always
