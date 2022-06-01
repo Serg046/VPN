@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ipsec-vpn-server
+spec:
+  selector:
+    matchLabels:
+      app: ipsec-vpn-server
+  template:
+    metadata:
+      labels:
+        app: ipsec-vpn-server
+    spec:
+      containers:
+      - name: ipsec-vpn-server
+        image: hwdsl2/ipsec-vpn-server
+        ports:
+        - containerPort: 789
+        securityContext:
+          privileged: true
+          capabilities:
+            add: ["NET_ADMIN"]
