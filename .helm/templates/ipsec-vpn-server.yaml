@@ -16,12 +16,8 @@ spec:
         image: hwdsl2/ipsec-vpn-server
         imagePullPolicy: Always
         ports:
-          - protocol: udp
-            port: 500
-            targetPort: 500
-          - protocol: udp
-            port: 4500
-            targetPort: 4500
+        - containerPort: 500
+        - containerPort: 4500
         securityContext:
           privileged: true
           capabilities:
