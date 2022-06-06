@@ -7,12 +7,12 @@ spec:
   ports:
   - port: 500
     name: first
-    protocol: TCP
+    protocol: UDP
     targetPort: 500
     nodePort: 30500
   - port: 4500
-    name: seconf
-    protocol: TCP
+    name: second
+    protocol: UDP
     targetPort: 4500
     nodePort: 30501
   selector:
