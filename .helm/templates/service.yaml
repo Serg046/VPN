@@ -6,9 +6,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 500
-    name: first
     protocol: UDP
-    targetPort: 500
-    nodePort: 30500
   selector:
     app: ipsec-vpn-server
