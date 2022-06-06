@@ -4,8 +4,11 @@ metadata:
   name: ipsec-vpn-server-lb
 spec:
   type: LoadBalancer
-  ports:
-  - port: 1701
+  - port: 500
     protocol: UDP
+    targetPort: 500
+  - port: 4500
+    protocol: UDP
+    targetPort: 4500
   selector:
     app: ipsec-vpn-server
