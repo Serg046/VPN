@@ -8,8 +8,10 @@ spec:
   - port: 500
     protocol: UDP
     targetPort: 500
+    nodePort: 30500
   - port: 4500
     protocol: UDP
     targetPort: 4500
+    nodePort: 34500
   selector:
     app: ipsec-vpn-server
