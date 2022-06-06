@@ -4,6 +4,7 @@ metadata:
   name: ipsec-vpn-server-lb
 spec:
   type: LoadBalancer
+  ports:
   - port: 500
     protocol: UDP
     targetPort: 500
