@@ -22,3 +22,10 @@ spec:
           privileged: true
           capabilities:
             add: ["NET_ADMIN"]
+        volumeMounts:
+        - name: vpn-pv
+          mountPath: /etc/ipsec.d
+      volumes:
+      - name: vpn-pv
+        persistentVolumeClaim:
+          claimName: vpn-pvc
