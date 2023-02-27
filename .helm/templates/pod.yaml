@@ -26,11 +26,11 @@ spec:
         - name: vpn-pv
           mountPath: /etc/ipsec.d
         livenessProbe:
-        exec:
-          command:
-             - bin/sh
-            - -c
-            - "end=$(date -u +%s);start=$(stat -c %Z /proc/1 | awk '{print int($1)}'); test $(($end-$start)) -lt 60"
+          exec:
+            command:
+              - bin/sh
+              - -c
+              - "end=$(date -u +%s);start=$(stat -c %Z /proc/1 | awk '{print int($1)}'); test $(($end-$start)) -lt 60"
       volumes:
       - name: vpn-pv
         persistentVolumeClaim:
