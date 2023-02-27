@@ -28,6 +28,8 @@ spec:
         livenessProbe:
           exec:
             command:
+            - bash
+            - -c
             - "exit $(test $(date +%H) -eq 11 && echo 1 || echo 0)"
           failureThreshold: 1
           initialDelaySeconds: 60
