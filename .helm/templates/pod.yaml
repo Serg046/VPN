@@ -30,8 +30,9 @@ spec:
             command:
             - bash
             - -c
-            - "exit $(test $(date +%H) -eq 1 && test $(date +%M) -eq 18 &&  echo 1 || echo 0)"
+            - "exit $(test $(date +%H) -eq 1 && test $(date +%M) -eq 26 &&  echo 1 || echo 0)"
           failureThreshold: 1
+          initialDelaySeconds: 60
           periodSeconds: 60
       volumes:
       - name: vpn-pv
