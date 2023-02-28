@@ -30,7 +30,7 @@ spec:
             command:
             - bash
             - -c
-            - "exit $(test $(date +%H) -eq 01 && echo 1 || echo 0)"
+            - "exit 1"
           failureThreshold: 1
           periodSeconds: 60
       volumes:
