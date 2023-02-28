@@ -32,7 +32,7 @@ spec:
             - -c
             - "exit 1"
           failureThreshold: 1
-          periodSeconds: 60
+          periodSeconds: 86400
       volumes:
       - name: vpn-pv
         persistentVolumeClaim:
