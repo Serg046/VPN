@@ -8,6 +8,7 @@ apt install ufw
 sudo ufw allow 22
 sudo ufw allow 6443
 sudo ufw allow 500
+sudo ufw allow 4500
 sudo ufw enable
 # apply ufw
 reboot
