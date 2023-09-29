@@ -6,8 +6,11 @@ apt install curl
 curl -sfL https://get.k3s.io | sh -
 apt install ufw
 sudo ufw allow 22
-sudo ufw enable
 sudo ufw allow 6443
+sudo ufw allow 500
+sudo ufw enable
+# apply ufw
+reboot
 cat /etc/rancher/k3s/k3s.yaml
 # update the ip address, convert to base64 and update the werf secret
 apt install git
