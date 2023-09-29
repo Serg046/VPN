@@ -1,6 +1,7 @@
 ```bash
 ssh root@1.2.3.4
 apt install sudo
+sudo passwd root
 apt install curl
 curl -sfL https://get.k3s.io | sh -
 apt install ufw
