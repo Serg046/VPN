@@ -5,9 +5,9 @@ sudo passwd root
 apt install curl
 curl -sfL https://get.k3s.io | sh -
 apt install ufw
-sudo ufw allow 6443
-cat etc/rancher/k3s/k3s.yaml | base64
-update the werf secret
+# sudo ufw allow 6443
+cat /etc/rancher/k3s/k3s.yaml
+# convert to base64 and update the werf secret
 apt install git
 curl -sSL https://werf.io/install.sh | bash -s -- --version 1.2 --channel stable
 converge
