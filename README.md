@@ -4,7 +4,7 @@ apt install sudo
 sudo passwd root
 apt install curl
 curl -sfL https://get.k3s.io | sh -
-apt install ufw
+apt install ufw # 'sudo apt update' might be needed
 sudo ufw allow 22
 sudo ufw allow 6443
 sudo ufw allow 500
