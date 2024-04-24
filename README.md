@@ -22,4 +22,12 @@ ikev2.sh --addclient username
 ikev2.sh --exportclient username
 kubectl cp -n vpn-production ipsec-vpn-server-84b65bbc75-87qt6:/etc/ipsec.d/ ./
 # copy the config, modify OnDemandRules and import to the OS
+# The array should contain one element 'Connect'
+#<key>OnDemandRules</key>
+#<array>
+#  <dict>
+#  <key>Action</key>
+#  <string>Connect</string>
+#  </dict>
+#</array>
 ```
