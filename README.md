@@ -4,6 +4,8 @@ apt install sudo
 sudo passwd root
 apt install curl
 curl -sfL https://get.k3s.io | sh -
+# Install cert-manager if needed, use the latest release
+# kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.17/cert-manager.yaml
 apt install ufw # 'sudo apt update' might be needed
 sudo ufw allow 22
 sudo ufw allow 6443 #k8s
