@@ -13,7 +13,7 @@ sudo ufw enable
 # apply ufw
 reboot
 cat /etc/rancher/k3s/k3s.yaml
-# update the ip address, convert to base64 and update the werf secret
+# update the ip address (don't use domain), convert to base64 and update the werf secret
 apt install git
 curl -sSL https://werf.io/install.sh | bash -s -- --version 1.2 --channel stable
 converge
